@@ -1,0 +1,11 @@
+E:\Udemy\CSharpWithProjects\PersonelTakip\PersonelTakip\bin\Debug\PersonelTakip.exe.config
+E:\Udemy\CSharpWithProjects\PersonelTakip\PersonelTakip\bin\Debug\PersonelTakip.exe
+E:\Udemy\CSharpWithProjects\PersonelTakip\PersonelTakip\bin\Debug\PersonelTakip.pdb
+E:\Udemy\CSharpWithProjects\PersonelTakip\PersonelTakip\obj\Debug\PersonelTakip.csprojResolveAssemblyReference.cache
+E:\Udemy\CSharpWithProjects\PersonelTakip\PersonelTakip\obj\Debug\PersonelTakip.Departmanlar.resources
+E:\Udemy\CSharpWithProjects\PersonelTakip\PersonelTakip\obj\Debug\PersonelTakip.Form1.resources
+E:\Udemy\CSharpWithProjects\PersonelTakip\PersonelTakip\obj\Debug\PersonelTakip.Properties.Resources.resources
+E:\Udemy\CSharpWithProjects\PersonelTakip\PersonelTakip\obj\Debug\PersonelTakip.csproj.GenerateResource.Cache
+E:\Udemy\CSharpWithProjects\PersonelTakip\PersonelTakip\obj\Debug\PersonelTakip.exe
+E:\Udemy\CSharpWithProjects\PersonelTakip\PersonelTakip\obj\Debug\PersonelTakip.pdb
+E:\Udemy\CSharpWithProjects\PersonelTakip\PersonelTakip\obj\Debug\PersonelTakip.FormDepartman.resources
