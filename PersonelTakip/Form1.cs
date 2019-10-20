@@ -23,5 +23,12 @@ namespace PersonelTakip
             departmanlar.MdiParent = this;
             departmanlar.Show();
         }
+
+        private void personellerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPersoneller formPersoneller = new FormPersoneller();
+            formPersoneller.MdiParent = this;
+            formPersoneller.Show();
+        }
     }
 }

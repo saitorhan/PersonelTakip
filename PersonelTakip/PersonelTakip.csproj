@@ -65,6 +65,18 @@
     <Compile Include="FormDepartman.Designer.cs">
       <DependentUpon>FormDepartman.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPersonel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPersonel.Designer.cs">
+      <DependentUpon>FormPersonel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPersonelelr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPersonelelr.Designer.cs">
+      <DependentUpon>FormPersonelelr.cs</DependentUpon>
+    </Compile>
     <Compile Include="GenelTanimlamalar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,6 +88,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDepartman.resx">
       <DependentUpon>FormDepartman.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPersonel.resx">
+      <DependentUpon>FormPersonel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPersonelelr.resx">
+      <DependentUpon>FormPersonelelr.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

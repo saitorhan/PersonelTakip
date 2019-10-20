@@ -29,6 +29,36 @@ namespace PersonelTakip
         {
             SqlConnection sqlConnection = GenelTanimlamalar.SqlBaglanti;
             SqlCommand sqlKomut;
+
+            sqlKomut = new SqlCommand($"select COUNT(*) from Departmanlar where Ad = @ad{(Id > 0 ? " AND Id = @id" : String.Empty)}", sqlConnection);
+            sqlKomut.Parameters.AddWithValue("@ad", textBoxAd.Text);
+            if (Id>0)
+            {
+                sqlKomut.Parameters.AddWithValue("@id", Id);
+            }
+
+            try
+            {
+                sqlConnection.Open();
+                int sayi = (int)sqlKomut.ExecuteScalar();
+                if (sayi > 0)
+                {
+                    MessageBox.Show($"{textBoxAd.Text} departmanı zaten kayıtlı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show($"{textBoxAd.Text} departmanı kaydedilemedi)", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (sqlConnection.State != ConnectionState.Closed)
+                {
+                    sqlConnection.Close();
+                }
+            }
+
             if (Id > 0)
             {
                 sqlKomut = new SqlCommand("update Departmanlar set Ad = @a where Id = @i", sqlConnection);
