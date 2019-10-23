@@ -20,7 +20,13 @@ namespace PersonelTakip
 
         private void buttonEkle_Click(object sender, EventArgs e)
         {
-            
+            FormPersonel formPersonel = new FormPersonel();
+            formPersonel.ShowDialog();
+
+            if (formPersonel.Sonuc > 0)
+            {
+                VerileriYenile();
+            }
         }
 
         private void Departmanlar_Load(object sender, EventArgs e)
@@ -59,12 +65,61 @@ namespace PersonelTakip
 
         private void buttonGuncelle_Click(object sender, EventArgs e)
         {
-            
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                return;
+            }
+
+            int id =  (int)dataGridView1.SelectedRows[0].Cells[0].Value;
+            FormPersonel formPersonel = new FormPersonel(id);
+            formPersonel.ShowDialog();
+
+            if (formPersonel.Sonuc > 0)
+            {
+                VerileriYenile();
+            }
         }
 
         private void buttonSil_Click(object sender, EventArgs e)
         {
-            
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                return;
+            }
+
+            int id = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
+
+            if (MessageBox.Show($"{dataGridView1.SelectedRows[0].Cells[1].Value} {dataGridView1.SelectedRows[0].Cells[2].Value} silinecek, bu işlem geri alınamaz. Onaylıyor musunuz?", "Uyarı!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+            {
+                return;
+            }
+
+            SqlConnection sqlConnection = GenelTanimlamalar.SqlBaglanti;
+            SqlCommand sqlCommand = new SqlCommand("delete Calisanlar where Id = @id", sqlConnection);
+            sqlCommand.Parameters.AddWithValue("@id", id);
+
+
+            try
+            {
+                sqlConnection.Open();
+                int sonuc = sqlCommand.ExecuteNonQuery();
+                MessageBox.Show($"{dataGridView1.SelectedRows[0].Cells[1].Value} {dataGridView1.SelectedRows[0].Cells[2].Value} silin{(sonuc > 0 ? "di" : "emedi")}", sonuc > 0 ? "Bilgilendir" : "Hata", MessageBoxButtons.OK, sonuc > 0 ? MessageBoxIcon.Information : MessageBoxIcon.Error);
+                if (sonuc > 0)
+                {
+                    VerileriYenile();
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Çalışan silinemedi", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (sqlConnection.State != ConnectionState.Closed)
+                {
+                    sqlConnection.Close();
+                }
+            }
         }
     }
 }

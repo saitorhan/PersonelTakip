@@ -10,3 +10,4 @@ E:\Udemy\CSharpWithProjects\PersonelTakip\PersonelTakip\obj\Debug\PersonelTakip.
 E:\Udemy\CSharpWithProjects\PersonelTakip\PersonelTakip\obj\Debug\PersonelTakip.pdb
 E:\Udemy\CSharpWithProjects\PersonelTakip\PersonelTakip\obj\Debug\PersonelTakip.FormDepartman.resources
 E:\Udemy\CSharpWithProjects\PersonelTakip\PersonelTakip\obj\Debug\PersonelTakip.FormPersoneller.resources
+E:\Udemy\CSharpWithProjects\PersonelTakip\PersonelTakip\obj\Debug\PersonelTakip.FormPersonel.resources
